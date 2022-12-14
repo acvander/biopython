@@ -60,4 +60,14 @@ WORKDIR /src
 RUN pip install . \
     && pre-commit install
 
+# Install direnv
+RUN apt update \
+    && apt install direnv \
+    && echo 'eval "$(direnv hook bash)"' >> /home/vscode/.bashrc
+
+# Install act
+WORKDIR /act
+RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash \
+    && echo 'export PATH="/act/bin/:$PATH"' >> /home/vscode/.bashrc
+
 WORKDIR /out

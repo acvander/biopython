@@ -132,3 +132,6 @@ ENV/
 
 # Testing
 **/.coverage
+
+# direnv
+.envrc
