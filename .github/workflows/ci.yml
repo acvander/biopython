@@ -213,7 +213,7 @@ jobs:
     timeout-minutes: 15
     needs: [style, build, build_wheels]
     runs-on: macos-latest
-    continue-on-error: ${{ matrix.experimental }}
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -251,7 +251,9 @@ jobs:
     timeout-minutes: 15
     needs: [style, build, build_wheels]
     runs-on: windows-2019
+    continue-on-error: true
     strategy:
+      fail-fast: false
       matrix:
         # TODO - Try Python 3.11 again, was Python 3.11.0 was
         # failing when trying to delete SQlite databases.
