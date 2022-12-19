@@ -11,9 +11,11 @@ on:
   pull_request:
     branches:
       - master
+      - ci-testing
   push:
     branches:
       - master
+      - ci-testing
 
 jobs:
   # Style Checking: Linux and Python version only.
